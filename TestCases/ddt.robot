@@ -1,21 +1,23 @@
 *** Settings ***
 Library     SeleniumLibrary
-Library    DataDriver   ../TestData/logindata.xlsx  sheet_name=Sheet1   # here we can use sheet name or number
+Library    DataDriver   ../TestData/logindata.xlsx  sheet_name=Sheet1
 Resource  ../Resources/login_resources.robot
 
+Suite Setup     Open my Browser
+Suite Teardown  Close Browsers
+Test Template   Invalid login
 
 Suite Setup     Open my Browser
 Suite Teardown      Close Browsers
 Test Template       Invalid login
 
 *** Test Cases ***
-LoginTestwithExcel    ${username}    ${password}
+LoginTestwithExcel  ${InvalidUsername}    ${InvalidPassword}  ${ValidUsername}    ${ValidPassword}
 
 *** Keywords ***
 Invalid login
-    [Arguments]    ${username}      ${password}
-    Input Username     ${username}
-    Input pwd       ${password}
+    [Arguments]    ${InvalidUsername}    ${InvalidPassword}  ${ValidUsername}    ${ValidPassword}
+    Input Username     ${InvalidUsername}
+    Input pwd       ${InvalidPassword}
     click login button
-    #Validation for invalid login
     Error message should be visible

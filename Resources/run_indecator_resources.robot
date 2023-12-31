@@ -4,7 +4,7 @@ Library     SeleniumLibrary
 # make prdefined keywords to use
 
 *** Variables ***
-${url}=     https://admin-demo.nopcommerce.com/login
+${url}=     https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F
 ${browser}=     chrome
 
 *** Keywords ***
@@ -19,22 +19,20 @@ Close Browsers
 Open Login Page
     go to   ${url}
 
-Input Username
-    [Arguments]    ${username}
+Check Login
+    [Arguments]    ${username}  ${password} ${Run_Indicator}
     input text    id:Email      ${username}
     sleep    2
-
-Input pwd
-    [Arguments]    ${password}
     input text    id:Password      ${password}
     sleep    2
-
-Click LogIn Button
     click element    xpath://button[contains(text(),'Log in')]
+    sleep    2
+
 
 Click Logout
-    click element    //a[normalize-space()='Logout']
-    sleep    5
+    click link    Logout
+    sleep    3
+
 Error message should be visible
     page should contain    Login was unsuccessful
 
