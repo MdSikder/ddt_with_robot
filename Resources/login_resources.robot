@@ -20,17 +20,22 @@ Open Login Page
     go to   ${url}
 
 Input Username
-    [Arguments]    ${username}
-    input text    id:Email      ${username}
+#    [Arguments]    ${username}
+    input text    id:Email      admin@yourstore.com
     sleep    2
 
 Input pwd
-    [Arguments]    ${password}
-    input text    id:Password      ${password}
+#    [Arguments]    ${password}
+    input text    id:Password      admin
     sleep    2
 
 Click LogIn Button
     click element    xpath://button[contains(text(),'Log in')]
+
+Input Product Id
+    [Arguments]    ${Part}
+    input text    xpath://input[@placeholder='Search']      ${Part}
+    sleep    2
 
 Click Logout
     click element    //a[normalize-space()='Logout']

@@ -1,349 +1,386 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.7.7 on win32)" generated="20231231 12:34:14.931" rpa="false" schemaversion="4">
-<suite id="s1" name="With Run Indecator" source="C:\Users\KloverCloud\PycharmProjects\ddt_with_robot\TestCases\with_run_indecator.robot">
+<robot generator="Robot 6.1.1 (Python 3.7.7 on win32)" generated="20240101 12:21:51.316" rpa="false" schemaversion="4">
+<suite id="s1" name="Assign" source="C:\Users\KloverCloud\PycharmProjects\ddt_with_robot\TestCases\assign.robot">
 <kw name="Open my Browser" library="run_indecator_resources" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231231 12:34:15.852" level="INFO">Opening browser 'chrome' to base url 'https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F'.</msg>
-<status status="PASS" starttime="20231231 12:34:15.852" endtime="20231231 12:34:18.562"/>
+<msg timestamp="20240101 12:21:52.111" level="INFO">Opening browser 'chrome' to base url 'https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F'.</msg>
+<status status="PASS" starttime="20240101 12:21:52.111" endtime="20240101 12:21:54.566"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20231231 12:34:18.562" endtime="20231231 12:34:18.682"/>
+<status status="PASS" starttime="20240101 12:21:54.566" endtime="20240101 12:21:54.696"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231231 12:34:20.693" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20231231 12:34:18.682" endtime="20231231 12:34:20.693"/>
+<msg timestamp="20240101 12:21:56.700" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240101 12:21:54.696" endtime="20240101 12:21:56.700"/>
 </kw>
-<status status="PASS" starttime="20231231 12:34:15.852" endtime="20231231 12:34:20.693"/>
+<status status="PASS" starttime="20240101 12:21:52.111" endtime="20240101 12:21:56.700"/>
 </kw>
-<test id="s1-t1" name="Check Login" line="12">
+<test id="s1-t1" name="Check Login" line="11">
 <kw name="_Check Login">
-<arg>y1@yourstore.com</arg>
-<arg>admin1</arg>
+<arg>2345127</arg>
 <arg>y</arg>
 <kw name="Evaluate" library="BuiltIn">
 <var>${run_test}</var>
-<arg>"${Run_Indicator.lower()}" == "y"</arg>
+<arg>"${Run_Indi.lower()}" == "y"</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231231 12:34:20.701" level="INFO">${run_test} = True</msg>
-<status status="PASS" starttime="20231231 12:34:20.699" endtime="20231231 12:34:20.701"/>
+<msg timestamp="20240101 12:21:56.704" level="INFO">${run_test} = True</msg>
+<status status="PASS" starttime="20240101 12:21:56.702" endtime="20240101 12:21:56.704"/>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <arg>${run_test}</arg>
-<arg>_Check And Perform Login</arg>
-<arg>${username}</arg>
-<arg>${password}</arg>
+<arg>_Check And Perform Valid Login</arg>
+<arg>${Part}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<kw name="_Check And Perform Login">
-<arg>${username}</arg>
-<arg>${password}</arg>
+<kw name="_Check And Perform Valid Login">
+<arg>${Part}</arg>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:Email</arg>
-<arg>${username}</arg>
+<arg>${Part}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231231 12:34:20.703" level="INFO">Typing text 'y1@yourstore.com' into text field 'id:Email'.</msg>
-<status status="PASS" starttime="20231231 12:34:20.702" endtime="20231231 12:34:20.817"/>
+<msg timestamp="20240101 12:21:56.704" level="INFO">Typing text '2345127' into text field 'id:Email'.</msg>
+<status status="PASS" starttime="20240101 12:21:56.704" endtime="20240101 12:21:56.789"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231231 12:34:22.821" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20231231 12:34:20.817" endtime="20231231 12:34:22.821"/>
+<msg timestamp="20240101 12:21:58.798" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240101 12:21:56.789" endtime="20240101 12:21:58.798"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:Password</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231231 12:34:22.821" level="INFO">Typing text 'admin1' into text field 'id:Password'.</msg>
-<status status="PASS" starttime="20231231 12:34:22.821" endtime="20231231 12:34:22.905"/>
+<status status="PASS" starttime="20240101 12:21:56.704" endtime="20240101 12:21:58.798"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231231 12:34:24.914" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20231231 12:34:22.906" endtime="20231231 12:34:24.914"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath://button[contains(text(),'Log in')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231231 12:34:24.914" level="INFO">Clicking element 'xpath://button[contains(text(),'Log in')]'.</msg>
-<status status="PASS" starttime="20231231 12:34:24.914" endtime="20231231 12:34:25.830"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231231 12:34:27.837" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20231231 12:34:25.830" endtime="20231231 12:34:27.837"/>
-</kw>
-<status status="PASS" starttime="20231231 12:34:20.702" endtime="20231231 12:34:27.837"/>
-</kw>
-<status status="PASS" starttime="20231231 12:34:20.701" endtime="20231231 12:34:27.837"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>Test Skipped: Run_Indicator is not 'y'</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20231231 12:34:27.837" level="INFO">Test Skipped: Run_Indicator is not 'y'</msg>
-<status status="PASS" starttime="20231231 12:34:27.837" endtime="20231231 12:34:27.837"/>
-</kw>
-<status status="PASS" starttime="20231231 12:34:20.697" endtime="20231231 12:34:27.837"/>
-</kw>
-<tag>Run</tag>
-<status status="PASS" starttime="20231231 12:34:20.694" endtime="20231231 12:34:27.837"/>
-</test>
-<test id="s1-t2" name="Check Login" line="12">
-<kw name="_Check Login">
-<arg>n1@yourstore.com</arg>
-<arg>admin2</arg>
-<arg>n</arg>
-<kw name="Evaluate" library="BuiltIn">
-<var>${run_test}</var>
-<arg>"${Run_Indicator.lower()}" == "y"</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231231 12:34:27.847" level="INFO">${run_test} = False</msg>
-<status status="PASS" starttime="20231231 12:34:27.837" endtime="20231231 12:34:27.847"/>
+<status status="PASS" starttime="20240101 12:21:56.704" endtime="20240101 12:21:58.798"/>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <arg>${run_test}</arg>
-<arg>_Check And Perform Login</arg>
-<arg>${username}</arg>
-<arg>${password}</arg>
+<arg>_Check And Perform Invalid Login</arg>
+<arg>${Part}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" starttime="20231231 12:34:27.847" endtime="20231231 12:34:27.847"/>
+<kw name="_Check And Perform Invalid Login">
+<arg>${Part}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:Email</arg>
+<arg>${Part}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240101 12:21:58.798" level="INFO">Typing text '2345127' into text field 'id:Email'.</msg>
+<status status="PASS" starttime="20240101 12:21:58.798" endtime="20240101 12:21:58.856"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240101 12:22:00.856" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240101 12:21:58.856" endtime="20240101 12:22:00.857"/>
+</kw>
+<status status="PASS" starttime="20240101 12:21:58.798" endtime="20240101 12:22:00.857"/>
+</kw>
+<status status="PASS" starttime="20240101 12:21:58.798" endtime="20240101 12:22:00.857"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>Test Skipped: Run_Indicator is not 'y'</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20231231 12:34:27.847" level="INFO">Test Skipped: Run_Indicator is not 'y'</msg>
-<status status="PASS" starttime="20231231 12:34:27.847" endtime="20231231 12:34:27.847"/>
+<msg timestamp="20240101 12:22:00.857" level="INFO">Test Skipped: Run_Indicator is not 'y'</msg>
+<status status="PASS" starttime="20240101 12:22:00.857" endtime="20240101 12:22:00.857"/>
 </kw>
-<status status="PASS" starttime="20231231 12:34:27.837" endtime="20231231 12:34:27.847"/>
+<status status="PASS" starttime="20240101 12:21:56.702" endtime="20240101 12:22:00.857"/>
 </kw>
 <tag>Run</tag>
-<status status="PASS" starttime="20231231 12:34:27.837" endtime="20231231 12:34:27.847"/>
+<status status="PASS" starttime="20240101 12:21:56.700" endtime="20240101 12:22:00.857"/>
 </test>
-<test id="s1-t3" name="Check Login" line="12">
+<test id="s1-t2" name="Check Login" line="11">
 <kw name="_Check Login">
-<arg>y2@klovercloud.co</arg>
-<arg>Hello@1234</arg>
+<arg>123mG01</arg>
 <arg>y</arg>
 <kw name="Evaluate" library="BuiltIn">
 <var>${run_test}</var>
-<arg>"${Run_Indicator.lower()}" == "y"</arg>
+<arg>"${Run_Indi.lower()}" == "y"</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231231 12:34:27.852" level="INFO">${run_test} = True</msg>
-<status status="PASS" starttime="20231231 12:34:27.852" endtime="20231231 12:34:27.852"/>
+<msg timestamp="20240101 12:22:00.866" level="INFO">${run_test} = True</msg>
+<status status="PASS" starttime="20240101 12:22:00.857" endtime="20240101 12:22:00.866"/>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <arg>${run_test}</arg>
-<arg>_Check And Perform Login</arg>
-<arg>${username}</arg>
-<arg>${password}</arg>
+<arg>_Check And Perform Valid Login</arg>
+<arg>${Part}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<kw name="_Check And Perform Login">
-<arg>${username}</arg>
-<arg>${password}</arg>
+<kw name="_Check And Perform Valid Login">
+<arg>${Part}</arg>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:Email</arg>
-<arg>${username}</arg>
+<arg>${Part}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231231 12:34:27.852" level="INFO">Typing text 'y2@klovercloud.co' into text field 'id:Email'.</msg>
-<status status="PASS" starttime="20231231 12:34:27.852" endtime="20231231 12:34:27.935"/>
+<msg timestamp="20240101 12:22:00.866" level="INFO">Typing text '123mG01' into text field 'id:Email'.</msg>
+<status status="PASS" starttime="20240101 12:22:00.866" endtime="20240101 12:22:00.931"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231231 12:34:29.945" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20231231 12:34:27.935" endtime="20231231 12:34:29.945"/>
+<msg timestamp="20240101 12:22:02.936" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240101 12:22:00.931" endtime="20240101 12:22:02.936"/>
 </kw>
+<status status="PASS" starttime="20240101 12:22:00.866" endtime="20240101 12:22:02.936"/>
+</kw>
+<status status="PASS" starttime="20240101 12:22:00.866" endtime="20240101 12:22:02.936"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${run_test}</arg>
+<arg>_Check And Perform Invalid Login</arg>
+<arg>${Part}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="_Check And Perform Invalid Login">
+<arg>${Part}</arg>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>id:Password</arg>
-<arg>${password}</arg>
+<arg>id:Email</arg>
+<arg>${Part}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231231 12:34:29.945" level="INFO">Typing text 'Hello@1234' into text field 'id:Password'.</msg>
-<status status="PASS" starttime="20231231 12:34:29.945" endtime="20231231 12:34:30.045"/>
+<msg timestamp="20240101 12:22:02.936" level="INFO">Typing text '123mG01' into text field 'id:Email'.</msg>
+<status status="PASS" starttime="20240101 12:22:02.936" endtime="20240101 12:22:03.004"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231231 12:34:32.054" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20231231 12:34:30.045" endtime="20231231 12:34:32.054"/>
+<msg timestamp="20240101 12:22:05.014" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240101 12:22:03.004" endtime="20240101 12:22:05.014"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath://button[contains(text(),'Log in')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231231 12:34:32.054" level="INFO">Clicking element 'xpath://button[contains(text(),'Log in')]'.</msg>
-<status status="PASS" starttime="20231231 12:34:32.054" endtime="20231231 12:34:32.454"/>
+<status status="PASS" starttime="20240101 12:22:02.936" endtime="20240101 12:22:05.014"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231231 12:34:34.462" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20231231 12:34:32.454" endtime="20231231 12:34:34.462"/>
-</kw>
-<status status="PASS" starttime="20231231 12:34:27.852" endtime="20231231 12:34:34.462"/>
-</kw>
-<status status="PASS" starttime="20231231 12:34:27.852" endtime="20231231 12:34:34.462"/>
+<status status="PASS" starttime="20240101 12:22:02.936" endtime="20240101 12:22:05.014"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>Test Skipped: Run_Indicator is not 'y'</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20231231 12:34:34.462" level="INFO">Test Skipped: Run_Indicator is not 'y'</msg>
-<status status="PASS" starttime="20231231 12:34:34.462" endtime="20231231 12:34:34.462"/>
+<msg timestamp="20240101 12:22:05.014" level="INFO">Test Skipped: Run_Indicator is not 'y'</msg>
+<status status="PASS" starttime="20240101 12:22:05.014" endtime="20240101 12:22:05.014"/>
 </kw>
-<status status="PASS" starttime="20231231 12:34:27.852" endtime="20231231 12:34:34.463"/>
+<status status="PASS" starttime="20240101 12:22:00.857" endtime="20240101 12:22:05.014"/>
 </kw>
 <tag>Run</tag>
-<status status="PASS" starttime="20231231 12:34:27.847" endtime="20231231 12:34:34.463"/>
+<status status="PASS" starttime="20240101 12:22:00.857" endtime="20240101 12:22:05.016"/>
 </test>
-<test id="s1-t4" name="Check Login" line="12">
+<test id="s1-t3" name="Check Login" line="11">
 <kw name="_Check Login">
-<arg>n2@klovercloud</arg>
-<arg>asdasdA</arg>
+<arg>2345127</arg>
 <arg>n</arg>
 <kw name="Evaluate" library="BuiltIn">
 <var>${run_test}</var>
-<arg>"${Run_Indicator.lower()}" == "y"</arg>
+<arg>"${Run_Indi.lower()}" == "y"</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231231 12:34:34.471" level="INFO">${run_test} = False</msg>
-<status status="PASS" starttime="20231231 12:34:34.468" endtime="20231231 12:34:34.471"/>
+<msg timestamp="20240101 12:22:05.026" level="INFO">${run_test} = False</msg>
+<status status="PASS" starttime="20240101 12:22:05.022" endtime="20240101 12:22:05.026"/>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <arg>${run_test}</arg>
-<arg>_Check And Perform Login</arg>
-<arg>${username}</arg>
-<arg>${password}</arg>
+<arg>_Check And Perform Valid Login</arg>
+<arg>${Part}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" starttime="20231231 12:34:34.471" endtime="20231231 12:34:34.471"/>
+<status status="PASS" starttime="20240101 12:22:05.026" endtime="20240101 12:22:05.026"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${run_test}</arg>
+<arg>_Check And Perform Invalid Login</arg>
+<arg>${Part}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240101 12:22:05.026" endtime="20240101 12:22:05.026"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>Test Skipped: Run_Indicator is not 'y'</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20231231 12:34:34.472" level="INFO">Test Skipped: Run_Indicator is not 'y'</msg>
-<status status="PASS" starttime="20231231 12:34:34.472" endtime="20231231 12:34:34.472"/>
+<msg timestamp="20240101 12:22:05.026" level="INFO">Test Skipped: Run_Indicator is not 'y'</msg>
+<status status="PASS" starttime="20240101 12:22:05.026" endtime="20240101 12:22:05.026"/>
 </kw>
-<status status="PASS" starttime="20231231 12:34:34.468" endtime="20231231 12:34:34.472"/>
+<status status="PASS" starttime="20240101 12:22:05.022" endtime="20240101 12:22:05.026"/>
 </kw>
 <tag>Run</tag>
-<status status="PASS" starttime="20231231 12:34:34.466" endtime="20231231 12:34:34.473"/>
+<status status="PASS" starttime="20240101 12:22:05.019" endtime="20240101 12:22:05.026"/>
 </test>
-<test id="s1-t5" name="Check Login" line="12">
+<test id="s1-t4" name="Check Login" line="11">
 <kw name="_Check Login">
-<arg>y3@klovercloud.co</arg>
-<arg>Hello@1234</arg>
+<arg>2345127</arg>
 <arg>y</arg>
 <kw name="Evaluate" library="BuiltIn">
 <var>${run_test}</var>
-<arg>"${Run_Indicator.lower()}" == "y"</arg>
+<arg>"${Run_Indi.lower()}" == "y"</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231231 12:34:34.476" level="INFO">${run_test} = True</msg>
-<status status="PASS" starttime="20231231 12:34:34.476" endtime="20231231 12:34:34.476"/>
+<msg timestamp="20240101 12:22:05.036" level="INFO">${run_test} = True</msg>
+<status status="PASS" starttime="20240101 12:22:05.030" endtime="20240101 12:22:05.036"/>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <arg>${run_test}</arg>
-<arg>_Check And Perform Login</arg>
-<arg>${username}</arg>
-<arg>${password}</arg>
+<arg>_Check And Perform Valid Login</arg>
+<arg>${Part}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<kw name="_Check And Perform Login">
-<arg>${username}</arg>
-<arg>${password}</arg>
+<kw name="_Check And Perform Valid Login">
+<arg>${Part}</arg>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:Email</arg>
-<arg>${username}</arg>
+<arg>${Part}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231231 12:34:34.476" level="INFO">Typing text 'y3@klovercloud.co' into text field 'id:Email'.</msg>
-<status status="PASS" starttime="20231231 12:34:34.476" endtime="20231231 12:34:34.558"/>
+<msg timestamp="20240101 12:22:05.036" level="INFO">Typing text '2345127' into text field 'id:Email'.</msg>
+<status status="PASS" starttime="20240101 12:22:05.036" endtime="20240101 12:22:05.094"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231231 12:34:36.565" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20231231 12:34:34.558" endtime="20231231 12:34:36.565"/>
+<msg timestamp="20240101 12:22:07.108" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240101 12:22:05.094" endtime="20240101 12:22:07.109"/>
 </kw>
+<status status="PASS" starttime="20240101 12:22:05.036" endtime="20240101 12:22:07.109"/>
+</kw>
+<status status="PASS" starttime="20240101 12:22:05.036" endtime="20240101 12:22:07.109"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${run_test}</arg>
+<arg>_Check And Perform Invalid Login</arg>
+<arg>${Part}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="_Check And Perform Invalid Login">
+<arg>${Part}</arg>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>id:Password</arg>
-<arg>${password}</arg>
+<arg>id:Email</arg>
+<arg>${Part}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231231 12:34:36.565" level="INFO">Typing text 'Hello@1234' into text field 'id:Password'.</msg>
-<status status="PASS" starttime="20231231 12:34:36.565" endtime="20231231 12:34:36.626"/>
+<msg timestamp="20240101 12:22:07.109" level="INFO">Typing text '2345127' into text field 'id:Email'.</msg>
+<status status="PASS" starttime="20240101 12:22:07.109" endtime="20240101 12:22:07.176"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231231 12:34:38.643" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20231231 12:34:36.626" endtime="20231231 12:34:38.643"/>
+<msg timestamp="20240101 12:22:09.185" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240101 12:22:07.176" endtime="20240101 12:22:09.185"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath://button[contains(text(),'Log in')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231231 12:34:38.643" level="INFO">Clicking element 'xpath://button[contains(text(),'Log in')]'.</msg>
-<status status="PASS" starttime="20231231 12:34:38.643" endtime="20231231 12:34:39.006"/>
+<status status="PASS" starttime="20240101 12:22:07.109" endtime="20240101 12:22:09.185"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231231 12:34:41.024" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20231231 12:34:39.008" endtime="20231231 12:34:41.024"/>
-</kw>
-<status status="PASS" starttime="20231231 12:34:34.476" endtime="20231231 12:34:41.024"/>
-</kw>
-<status status="PASS" starttime="20231231 12:34:34.476" endtime="20231231 12:34:41.024"/>
+<status status="PASS" starttime="20240101 12:22:07.109" endtime="20240101 12:22:09.185"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>Test Skipped: Run_Indicator is not 'y'</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20231231 12:34:41.024" level="INFO">Test Skipped: Run_Indicator is not 'y'</msg>
-<status status="PASS" starttime="20231231 12:34:41.024" endtime="20231231 12:34:41.024"/>
+<msg timestamp="20240101 12:22:09.186" level="INFO">Test Skipped: Run_Indicator is not 'y'</msg>
+<status status="PASS" starttime="20240101 12:22:09.185" endtime="20240101 12:22:09.186"/>
 </kw>
-<status status="PASS" starttime="20231231 12:34:34.476" endtime="20231231 12:34:41.024"/>
+<status status="PASS" starttime="20240101 12:22:05.030" endtime="20240101 12:22:09.186"/>
 </kw>
 <tag>Run</tag>
-<status status="PASS" starttime="20231231 12:34:34.475" endtime="20231231 12:34:41.024"/>
+<status status="PASS" starttime="20240101 12:22:05.030" endtime="20240101 12:22:09.186"/>
 </test>
-<test id="s1-t6" name="Check Login" line="12">
+<test id="s1-t5" name="Check Login" line="11">
 <kw name="_Check Login">
-<arg>n3@klovercloud</arg>
-<arg>asdasdA</arg>
+<arg>123mG01</arg>
+<arg>y</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${run_test}</var>
+<arg>"${Run_Indi.lower()}" == "y"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240101 12:22:09.186" level="INFO">${run_test} = True</msg>
+<status status="PASS" starttime="20240101 12:22:09.186" endtime="20240101 12:22:09.186"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${run_test}</arg>
+<arg>_Check And Perform Valid Login</arg>
+<arg>${Part}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="_Check And Perform Valid Login">
+<arg>${Part}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:Email</arg>
+<arg>${Part}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240101 12:22:09.186" level="INFO">Typing text '123mG01' into text field 'id:Email'.</msg>
+<status status="PASS" starttime="20240101 12:22:09.186" endtime="20240101 12:22:09.244"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240101 12:22:11.244" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240101 12:22:09.244" endtime="20240101 12:22:11.244"/>
+</kw>
+<status status="PASS" starttime="20240101 12:22:09.186" endtime="20240101 12:22:11.244"/>
+</kw>
+<status status="PASS" starttime="20240101 12:22:09.186" endtime="20240101 12:22:11.244"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${run_test}</arg>
+<arg>_Check And Perform Invalid Login</arg>
+<arg>${Part}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="_Check And Perform Invalid Login">
+<arg>${Part}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:Email</arg>
+<arg>${Part}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240101 12:22:11.245" level="INFO">Typing text '123mG01' into text field 'id:Email'.</msg>
+<status status="PASS" starttime="20240101 12:22:11.245" endtime="20240101 12:22:11.299"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240101 12:22:13.308" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240101 12:22:11.299" endtime="20240101 12:22:13.308"/>
+</kw>
+<status status="PASS" starttime="20240101 12:22:11.245" endtime="20240101 12:22:13.308"/>
+</kw>
+<status status="PASS" starttime="20240101 12:22:11.244" endtime="20240101 12:22:13.308"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Test Skipped: Run_Indicator is not 'y'</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240101 12:22:13.308" level="INFO">Test Skipped: Run_Indicator is not 'y'</msg>
+<status status="PASS" starttime="20240101 12:22:13.308" endtime="20240101 12:22:13.308"/>
+</kw>
+<status status="PASS" starttime="20240101 12:22:09.186" endtime="20240101 12:22:13.308"/>
+</kw>
+<tag>Run</tag>
+<status status="PASS" starttime="20240101 12:22:09.186" endtime="20240101 12:22:13.308"/>
+</test>
+<test id="s1-t6" name="Check Login" line="11">
+<kw name="_Check Login">
+<arg>2345127</arg>
 <arg>n</arg>
 <kw name="Evaluate" library="BuiltIn">
 <var>${run_test}</var>
-<arg>"${Run_Indicator.lower()}" == "y"</arg>
+<arg>"${Run_Indi.lower()}" == "y"</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231231 12:34:41.024" level="INFO">${run_test} = False</msg>
-<status status="PASS" starttime="20231231 12:34:41.024" endtime="20231231 12:34:41.024"/>
+<msg timestamp="20240101 12:22:13.316" level="INFO">${run_test} = False</msg>
+<status status="PASS" starttime="20240101 12:22:13.316" endtime="20240101 12:22:13.316"/>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <arg>${run_test}</arg>
-<arg>_Check And Perform Login</arg>
-<arg>${username}</arg>
-<arg>${password}</arg>
+<arg>_Check And Perform Valid Login</arg>
+<arg>${Part}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" starttime="20231231 12:34:41.024" endtime="20231231 12:34:41.024"/>
+<status status="PASS" starttime="20240101 12:22:13.316" endtime="20240101 12:22:13.316"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${run_test}</arg>
+<arg>_Check And Perform Invalid Login</arg>
+<arg>${Part}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240101 12:22:13.316" endtime="20240101 12:22:13.316"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>Test Skipped: Run_Indicator is not 'y'</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20231231 12:34:41.024" level="INFO">Test Skipped: Run_Indicator is not 'y'</msg>
-<status status="PASS" starttime="20231231 12:34:41.024" endtime="20231231 12:34:41.024"/>
+<msg timestamp="20240101 12:22:13.316" level="INFO">Test Skipped: Run_Indicator is not 'y'</msg>
+<status status="PASS" starttime="20240101 12:22:13.316" endtime="20240101 12:22:13.316"/>
 </kw>
-<status status="PASS" starttime="20231231 12:34:41.024" endtime="20231231 12:34:41.024"/>
+<status status="PASS" starttime="20240101 12:22:13.316" endtime="20240101 12:22:13.316"/>
 </kw>
 <tag>Run</tag>
-<status status="PASS" starttime="20231231 12:34:41.024" endtime="20231231 12:34:41.024"/>
+<status status="PASS" starttime="20240101 12:22:13.308" endtime="20240101 12:22:13.316"/>
 </test>
 <kw name="Close Browsers" library="run_indecator_resources" type="TEARDOWN">
 <kw name="Close All Browsers" library="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20231231 12:34:41.039" endtime="20231231 12:34:47.274"/>
+<status status="PASS" starttime="20240101 12:22:13.324" endtime="20240101 12:22:19.526"/>
 </kw>
-<status status="PASS" starttime="20231231 12:34:41.024" endtime="20231231 12:34:47.274"/>
+<status status="PASS" starttime="20240101 12:22:13.316" endtime="20240101 12:22:19.526"/>
 </kw>
-<status status="PASS" starttime="20231231 12:34:14.931" endtime="20231231 12:34:47.274"/>
+<status status="PASS" starttime="20240101 12:21:51.316" endtime="20240101 12:22:19.526"/>
 </suite>
 <statistics>
 <total>
@@ -353,15 +390,15 @@
 <stat pass="6" fail="0" skip="0">Run</stat>
 </tag>
 <suite>
-<stat pass="6" fail="0" skip="0" id="s1" name="With Run Indecator">With Run Indecator</stat>
+<stat pass="6" fail="0" skip="0" id="s1" name="Assign">Assign</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20231231 12:34:15.174" level="ERROR">Error in file 'C:\Users\KloverCloud\PycharmProjects\ddt_with_robot\Resources\run_indecator_resources.robot' on line 22: Creating keyword 'Check Login' failed: Invalid argument specification: Invalid argument syntax '${password} ${Run_Indicator}'.</msg>
-<msg timestamp="20231231 12:34:27.837" level="WARN">Multiple tests with name 'Check Login' executed in suite 'With Run Indecator'.</msg>
-<msg timestamp="20231231 12:34:27.847" level="WARN">Multiple tests with name 'Check Login' executed in suite 'With Run Indecator'.</msg>
-<msg timestamp="20231231 12:34:34.465" level="WARN">Multiple tests with name 'Check Login' executed in suite 'With Run Indecator'.</msg>
-<msg timestamp="20231231 12:34:34.474" level="WARN">Multiple tests with name 'Check Login' executed in suite 'With Run Indecator'.</msg>
-<msg timestamp="20231231 12:34:41.024" level="WARN">Multiple tests with name 'Check Login' executed in suite 'With Run Indecator'.</msg>
+<msg timestamp="20240101 12:21:51.486" level="ERROR">Error in file 'C:\Users\KloverCloud\PycharmProjects\ddt_with_robot\Resources\run_indecator_resources.robot' on line 22: Creating keyword 'Check Login' failed: Invalid argument specification: Invalid argument syntax '${password} ${Run_Indicator}'.</msg>
+<msg timestamp="20240101 12:22:00.857" level="WARN">Multiple tests with name 'Check Login' executed in suite 'Assign'.</msg>
+<msg timestamp="20240101 12:22:05.018" level="WARN">Multiple tests with name 'Check Login' executed in suite 'Assign'.</msg>
+<msg timestamp="20240101 12:22:05.030" level="WARN">Multiple tests with name 'Check Login' executed in suite 'Assign'.</msg>
+<msg timestamp="20240101 12:22:09.186" level="WARN">Multiple tests with name 'Check Login' executed in suite 'Assign'.</msg>
+<msg timestamp="20240101 12:22:13.308" level="WARN">Multiple tests with name 'Check Login' executed in suite 'Assign'.</msg>
 </errors>
 </robot>

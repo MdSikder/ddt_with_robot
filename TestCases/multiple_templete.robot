@@ -1,6 +1,6 @@
 *** Settings ***
 Library     SeleniumLibrary
-Library    DataDriver   ../TestData/logindata.xlsx  sheet_name=Sheet1
+#Library    DataDriver   ../TestData/logindata.xlsx  sheet_name=Sheet1
 Resource  ../Resources/login_resources.robot
 
 Suite Setup     Open my Browser
@@ -30,6 +30,4 @@ Valid login
     Input Username     ${ValidUsername}
     Input pwd       ${ValidPassword}
     click login button
-    # Validation for valid login
     Error message should be visible
-#    Click Logout

@@ -1,5 +1,4 @@
-${username};${password};${Run_Indicator};
-y1@yourstore.com;admim;y;
-n1@yourstore.com;admim;n;
-y2@yourstore.com;admim;y;
-n2@yourstore.com;admim;n;
+${Part};${Run_Indi}
+2345127;y;
+123mG01;y;
+2345127;n;
